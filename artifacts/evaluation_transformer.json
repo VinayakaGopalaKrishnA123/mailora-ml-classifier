@@ -1,0 +1,208 @@
+{
+  "model_type": "transformer",
+  "model_version": "1.0.0-distilbert",
+  "decision_threshold": 0.5,
+  "test_samples": 60,
+  "metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0,
+    "false_positive_rate": 0.0,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "true_positives": 37,
+    "true_negatives": 23,
+    "confusion_matrix": [
+      [
+        23,
+        0
+      ],
+      [
+        0,
+        37
+      ]
+    ],
+    "classification_report": {
+      "NON_CAREER_RELATED": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 23.0
+      },
+      "CAREER_RELATED": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 37.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 60.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 60.0
+      }
+    }
+  },
+  "latency_ms": {
+    "mean": 105.88,
+    "p50": 106.1,
+    "p95": 133.68,
+    "p99": 162.36
+  },
+  "hard_negative_subset": {
+    "total": 7,
+    "passed": 7,
+    "accuracy": 1.0
+  },
+  "edge_case_bench": {
+    "total": 15,
+    "passed": 15,
+    "accuracy": 1.0,
+    "cases": [
+      {
+        "category": "User Case: Glasp Newsletter (AI & SWE Educational Content)",
+        "subject": "Why AI hasn't replaced software engineers, and won't",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.9119,
+        "career_probability": 0.0881,
+        "is_correct": true
+      },
+      {
+        "category": "Hard Negative: Pragmatic Engineer Careers Digest",
+        "subject": "The Pragmatic Engineer: How software engineering careers are evolving in 2026",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.9002,
+        "career_probability": 0.0998,
+        "is_correct": true
+      },
+      {
+        "category": "Hard Negative: Interview Prep Tutorial (No Invite)",
+        "subject": "How to crack coding interviews: A complete roadmap for SDE roles",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.8812,
+        "career_probability": 0.1188,
+        "is_correct": true
+      },
+      {
+        "category": "Hard Negative: Tech Salary Report & Compensation Survey",
+        "subject": "Tech Salary Report 2026: What Software Engineers and Data Scientists Earn",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.9342,
+        "career_probability": 0.0658,
+        "is_correct": true
+      },
+      {
+        "category": "Hard Negative: Labor Market Hiring Research",
+        "subject": "Hiring trends in the technology industry: What the data tells us",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.929,
+        "career_probability": 0.071,
+        "is_correct": true
+      },
+      {
+        "category": "Hard Negative: Top Tech Companies Editorial",
+        "subject": "Top companies for software engineers in 2026: Culture, Pay, and Growth",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.9086,
+        "career_probability": 0.0914,
+        "is_correct": true
+      },
+      {
+        "category": "Hard Negative: University Placement Overview Report",
+        "subject": "Annual Campus Placement Statistics Report 2025-2026",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.8095,
+        "career_probability": 0.1905,
+        "is_correct": true
+      },
+      {
+        "category": "Actionable Career: Software Engineer Internship",
+        "subject": "Software Engineer Internship \u2014 Apply Now",
+        "expected": "CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.9665,
+        "career_probability": 0.9665,
+        "is_correct": true
+      },
+      {
+        "category": "Actionable Career: Recruiter Interview Confirmation",
+        "subject": "Your interview is scheduled for tomorrow: Software Engineer Intern at Uber",
+        "expected": "CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.9658,
+        "career_probability": 0.9658,
+        "is_correct": true
+      },
+      {
+        "category": "Actionable Career: Application Status Acknowledgment",
+        "subject": "Application received \u2014 Graduate Engineer Trainee at Tata Consultancy Services",
+        "expected": "CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.9647,
+        "career_probability": 0.9647,
+        "is_correct": true
+      },
+      {
+        "category": "Actionable Career: Campus Placement Drive Registration",
+        "subject": "Placement Drive Registration Open: J.P. Morgan Campus Hiring 2027",
+        "expected": "CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.9573,
+        "career_probability": 0.9573,
+        "is_correct": true
+      },
+      {
+        "category": "Actionable Career: Application Rejection Update",
+        "subject": "Update regarding your job application for Software Engineer at Stripe",
+        "expected": "CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.9636,
+        "career_probability": 0.9636,
+        "is_correct": true
+      },
+      {
+        "category": "Everyday Negative: Amazon Parcel Shipped",
+        "subject": "Your Amazon.in order #402-98124 has shipped",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.9452,
+        "career_probability": 0.0548,
+        "is_correct": true
+      },
+      {
+        "category": "Everyday Negative: HDFC Monthly Statement",
+        "subject": "HDFC Bank: Monthly e-Statement for Credit Card ending 4092",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.9366,
+        "career_probability": 0.0634,
+        "is_correct": true
+      },
+      {
+        "category": "Misleading Keyword: Colloquial Praise",
+        "subject": "Great job on the presentation today!",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.8949,
+        "career_probability": 0.1051,
+        "is_correct": true
+      }
+    ]
+  }
+}

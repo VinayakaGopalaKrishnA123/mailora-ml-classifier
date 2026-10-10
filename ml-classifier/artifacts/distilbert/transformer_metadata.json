@@ -1,0 +1,54 @@
+{
+  "model_type": "distilbert_transformer",
+  "model_name": "distilbert-base-uncased",
+  "trained_at": "2026-10-10T13:05:15.216584Z",
+  "device": "cpu",
+  "epochs": 2,
+  "batch_size": 8,
+  "max_length": 256,
+  "learning_rate": 2e-05,
+  "test_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0,
+    "confusion_matrix": [
+      [
+        27,
+        0
+      ],
+      [
+        0,
+        37
+      ]
+    ],
+    "classification_report": {
+      "NON_CAREER_RELATED": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 27.0
+      },
+      "CAREER_RELATED": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 37.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 64.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 64.0
+      }
+    }
+  }
+}

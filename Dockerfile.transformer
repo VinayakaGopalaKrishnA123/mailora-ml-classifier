@@ -1,0 +1,36 @@
+# ==============================================================================
+# Mailora Email Classifier - Production Dockerfile (Transformer DistilBERT v1.1.0)
+# Deep contextual NLP microservice
+# ==============================================================================
+
+FROM python:3.10-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu && \
+    pip install --no-cache-dir transformers>=4.35.0 scikit-learn>=1.3.0 pandas>=2.0.0 fastapi>=0.100.0 "uvicorn[standard]>=0.23.0" pydantic>=2.0.0 python-dotenv>=1.0.0 joblib>=1.3.0 httpx>=0.24.0
+
+COPY src/ /app/src/
+COPY artifacts/ /app/artifacts/
+
+ENV PORT=8000 \
+    HOST=0.0.0.0 \
+    MODEL_TYPE=transformer \
+    MODEL_DIR=/app/artifacts \
+    WORKERS=1 \
+    PYTHONUNBUFFERED=1
+
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+CMD ["sh", "-c", "uvicorn src.api:app --host 0.0.0.0 --port ${PORT:-8000} --workers ${WORKERS:-1}"]

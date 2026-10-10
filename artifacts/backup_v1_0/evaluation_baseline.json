@@ -1,0 +1,140 @@
+{
+  "model_type": "baseline",
+  "model_version": "1.0.0",
+  "decision_threshold": 0.29999999999999993,
+  "test_samples": 64,
+  "metrics": {
+    "accuracy": 0.9688,
+    "precision": 0.9487,
+    "recall": 1.0,
+    "f1_score": 0.9737,
+    "roc_auc": 1.0,
+    "confusion_matrix": {
+      "true_negatives": 25,
+      "false_positives": 2,
+      "false_negatives": 0,
+      "true_positives": 37
+    },
+    "classification_report": {
+      "NON_CAREER_RELATED": {
+        "precision": 1.0,
+        "recall": 0.9259259259259259,
+        "f1-score": 0.9615384615384616,
+        "support": 27.0
+      },
+      "CAREER_RELATED": {
+        "precision": 0.9487179487179487,
+        "recall": 1.0,
+        "f1-score": 0.9736842105263158,
+        "support": 37.0
+      },
+      "accuracy": 0.96875,
+      "macro avg": {
+        "precision": 0.9743589743589743,
+        "recall": 0.962962962962963,
+        "f1-score": 0.9676113360323887,
+        "support": 64.0
+      },
+      "weighted avg": {
+        "precision": 0.9703525641025641,
+        "recall": 0.96875,
+        "f1-score": 0.9685602226720649,
+        "support": 64.0
+      }
+    }
+  },
+  "latency_ms": {
+    "mean": 407.3,
+    "p50": 64.11,
+    "p95": 3862.4,
+    "p99": 5963.92
+  },
+  "model_size_mb": 0.27,
+  "edge_case_bench": {
+    "total": 10,
+    "passed": 7,
+    "accuracy": 0.7,
+    "cases": [
+      {
+        "category": "Clear Positive (Internship)",
+        "subject": "Summer 2027 Software Engineering Internship - Google",
+        "expected": "CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.9236,
+        "is_correct": true
+      },
+      {
+        "category": "Clear Negative (Shopping)",
+        "subject": "Your Amazon.in order #402-98124 has shipped",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.811,
+        "is_correct": true
+      },
+      {
+        "category": "Tricky Negative (Course Marketing with Career Keywords)",
+        "subject": "Master Full Stack in 6 Months with 100% Job Placement Assistance!",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.3545,
+        "is_correct": false
+      },
+      {
+        "category": "Tricky Positive (Application Rejection)",
+        "subject": "Update on your job application for Senior Backend Engineer at Stripe",
+        "expected": "CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.8726,
+        "is_correct": true
+      },
+      {
+        "category": "Short Email Positive",
+        "subject": "Interview tomorrow at 3 PM IST",
+        "expected": "CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.8573,
+        "is_correct": true
+      },
+      {
+        "category": "Short Email Negative",
+        "subject": "Dinner plans?",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.3304,
+        "is_correct": false
+      },
+      {
+        "category": "Misleading Keyword Negative ('Job' used colloquially)",
+        "subject": "Great job on the presentation today!",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.3953,
+        "is_correct": false
+      },
+      {
+        "category": "Misleading Brand Negative (Amazon receipt)",
+        "subject": "Amazon Payment Receipt for Prime Membership",
+        "expected": "NON_CAREER_RELATED",
+        "predicted": "NON_CAREER_RELATED",
+        "confidence": 0.7799,
+        "is_correct": true
+      },
+      {
+        "category": "Misleading Brand Positive (Amazon SDE Hiring)",
+        "subject": "Amazon Student Programs: SDE New Grad Assessment Invitation",
+        "expected": "CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.7766,
+        "is_correct": true
+      },
+      {
+        "category": "Campus Placement Cell Announcement",
+        "subject": "T&P Cell Notice: J.P. Morgan Campus Drive Registration Closing Tonight",
+        "expected": "CAREER_RELATED",
+        "predicted": "CAREER_RELATED",
+        "confidence": 0.7659,
+        "is_correct": true
+      }
+    ]
+  }
+}

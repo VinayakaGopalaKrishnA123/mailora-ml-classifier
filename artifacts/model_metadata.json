@@ -1,0 +1,67 @@
+{
+  "model_type": "baseline_tfidf_logistic_regression",
+  "model_version": "1.1.0",
+  "trained_at": "2026-10-10T13:47:56.849648Z",
+  "random_seed": 42,
+  "calibrated_threshold": 0.5500000000000002,
+  "model_artifact": "baseline_pipeline.joblib",
+  "model_size_mb": 0.36,
+  "cross_validation_f1_mean": 0.9886,
+  "cross_validation_f1_std": 0.0107,
+  "validation_metrics": {
+    "threshold": 0.55,
+    "recall": 1.0,
+    "precision": 1.0,
+    "f1": 1.0,
+    "accuracy": 1.0
+  },
+  "test_metrics": {
+    "accuracy": 0.9833,
+    "precision": 1.0,
+    "recall": 0.973,
+    "f1_score": 0.9863,
+    "roc_auc": 1.0,
+    "false_positive_rate": 0.0,
+    "false_negatives": 1,
+    "false_positives": 0,
+    "true_positives": 36,
+    "true_negatives": 23,
+    "confusion_matrix": [
+      [
+        23,
+        0
+      ],
+      [
+        1,
+        36
+      ]
+    ],
+    "classification_report": {
+      "NON_CAREER_RELATED": {
+        "precision": 0.9583333333333334,
+        "recall": 1.0,
+        "f1-score": 0.9787234042553191,
+        "support": 23.0
+      },
+      "CAREER_RELATED": {
+        "precision": 1.0,
+        "recall": 0.972972972972973,
+        "f1-score": 0.9863013698630136,
+        "support": 37.0
+      },
+      "accuracy": 0.9833333333333333,
+      "macro avg": {
+        "precision": 0.9791666666666667,
+        "recall": 0.9864864864864865,
+        "f1-score": 0.9825123870591663,
+        "support": 60.0
+      },
+      "weighted avg": {
+        "precision": 0.9840277777777778,
+        "recall": 0.9833333333333333,
+        "f1-score": 0.9833964830467308,
+        "support": 60.0
+      }
+    }
+  }
+}
