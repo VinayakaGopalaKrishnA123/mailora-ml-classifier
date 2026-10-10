@@ -41,8 +41,8 @@ This guide explains how the **ML Email Classifier** integrates into the existing
 In `C:\Users\srini\Desktop\Mailora\mail-or-a-frontend-backend\server\.env`:
 
 ```env
-# Mailora ML Email Classifier Microservice
-EMAIL_CLASSIFIER_URL=http://localhost:8000
+# Mailora ML Email Classifier Microservice (Live AWS Cloud Deployment)
+EMAIL_CLASSIFIER_URL=http://16.113.151.217:8000
 EMAIL_CLASSIFIER_ENABLED=true
 EMAIL_CLASSIFIER_TIMEOUT_MS=3000
 ```
